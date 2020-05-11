@@ -50,9 +50,7 @@ formElem.addEventListener("submit", async function (event) {
 
   personsNameInput.value = "";
   render();
-});
-
-}
+})
 
 
 
