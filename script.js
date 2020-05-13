@@ -1,6 +1,6 @@
 // DATABASE
 
-async function sendData(url = '', data = {}, method = "POST") { 
+async function sendData(url = '', data = {}, method = "POST") {
   const response = await fetch(url, {
     method,
     headers: {
@@ -50,7 +50,18 @@ formElem.addEventListener("submit", async function (event) {
 
   personsNameInput.value = "";
   render();
-})
+});
+
+async function render () {
+  let peopleArray = await getPeople();
+  let peopleHtml = peopleArray.map(person => {
+    return `<div data-id="${person._id}"><a class="delete-person"href="#">.</a> ${person.name}</div>`;
+  }).join("");
+  
+  queueElem.innerHTML = peopleHtml;
+  render(); 
+}
+
 
 
 
