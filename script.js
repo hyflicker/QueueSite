@@ -59,27 +59,6 @@ async function render () {
   }).join("");
   
   queueElem.innerHTML = peopleHtml;
-  render();
 }
 
 render();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
